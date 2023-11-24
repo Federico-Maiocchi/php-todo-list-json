@@ -28,7 +28,7 @@ header('Content-Type: application/json');
 // risposta
 $response = [
     'success' => true,
-    'result' => $todos,
+    'results' => $todos,
 ];
 
 // stampare i dati nel J Son
