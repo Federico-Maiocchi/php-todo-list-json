@@ -29,16 +29,17 @@ methods: {
 
         const data = {
             text: this.newTodo,
-            done: false
-
         }
-        console.log(data);
+        // console.log(data);
 
         axios.post('store.php',data, {
-            headers: {
-                'Content-Type': 'multipart/form-data',
-            },
+            headers: {'Content-Type': 'multipart/form-data'},
+        }). then(res => {
+            this.todos = res.data.todos;
+
+            this.newTodo = '';
         })
+
 
     }
 },

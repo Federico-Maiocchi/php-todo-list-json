@@ -41,5 +41,5 @@ $response = [
 ];
 
 // stampare i dati nel J Son
-// -  funzione per trasformare i nostri dati in file J Son
+// - funzione per trasformare i nostri dati in file J Son
 echo json_encode($response);
