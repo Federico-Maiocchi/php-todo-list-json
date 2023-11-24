@@ -20,8 +20,10 @@ $title = 'To do lists'
             <section>
                 <div class="container">
                     <h1> <?php echo $title ?> </h1>
-                </div>
-                
+                    <!-- collegamento bidirezionale, aggiungere un nuovo oggetto nell'array -->
+                    <input type="text" v-model="newTodo" @keyup.enter="storeTodo">
+                    <input type="submit" value="aggiungi" @click="storeTodo">
+                </div>    
             </section>
             <section>
                 <div class="container">
@@ -32,8 +34,6 @@ $title = 'To do lists'
                 </div>
             </section>
         </main>
-
-    
     </div>
 
     <script src="./js/main.js"></script>
