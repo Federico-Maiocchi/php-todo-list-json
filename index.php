@@ -26,12 +26,9 @@ $title = 'To do lists'
             <section>
                 <div class="container">
                     <h3> {{ message }} </h3>
-                
                     <ul>
-                        <li>PHP</li>
-                        <li>JS</li>
-                        <li>HTML</li>
-                        <li>CSS</li>
+                        <li v-for="(todo, i) in todos " :key="i" >{{ todo }}</li>
+                       
                     </ul>
                 </div>
             </section>

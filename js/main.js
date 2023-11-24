@@ -7,7 +7,7 @@ createApp({
 data() {
     return {
     message: 'La mia lista',
-    
+    todos: ['PHP', 'JS', 'HTML', 'CSS']
 
 
     }
