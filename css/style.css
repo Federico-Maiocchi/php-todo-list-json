@@ -10,3 +10,15 @@ ol,
 menu {
     list-style: none;
 }
+
+/* general */
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+section {
+    padding: 50px 20px;
+}
+

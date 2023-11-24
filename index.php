@@ -14,16 +14,31 @@ $title = 'To do lists'
     <link rel="stylesheet" href="./css/style.css">
 </head>
 <body>
+
     <div id="app">
-        <h1> <?php echo $title ?> </h1>
-        <h2> {{ message }} </h2>
-    
+        <main>
+            <section>
+                <div class="container">
+                    <h1> <?php echo $title ?> </h1>
+                </div>
+                
+            </section>
+            <section>
+                <div class="container">
+                    <h3> {{ message }} </h3>
+                
+                    <ul>
+                        <li>PHP</li>
+                        <li>JS</li>
+                        <li>HTML</li>
+                        <li>CSS</li>
+                    </ul>
+                </div>
+            </section>
+        </main>
+
     
     </div>
-
-
-
-
 
     <script src="./js/main.js"></script>
 </body>
