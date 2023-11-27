@@ -8,7 +8,8 @@
 ul,
 ol,
 menu {
-    list-style: none;
+    /* list-style: none; */
+    border: 1px solid black;
 }
 
 /* general */
@@ -21,4 +22,10 @@ menu {
 section {
     padding: 50px 20px;
 }
+
+li {
+    display: flex;
+    justify-content: space-between;
+}
+
 

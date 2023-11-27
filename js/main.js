@@ -9,6 +9,7 @@ data() {
     message: 'La mia lista',
     todos: [],
     newTodo: '',
+    index: '',
 
 
     }
@@ -25,22 +26,36 @@ methods: {
 
     // funzione - per inviare richieste POST nello store.php 
     storeTodo() {
-        // console.log(this.newTodo);
+        if (this.newTodo !== '') {
+            // console.log(this.newTodo);
 
-        const data = {
-            text: this.newTodo,
+            const data = {
+                text: this.newTodo,
+            }
+            // console.log(data);
+
+            axios.post('store.php',data, {
+                headers: {'Content-Type': 'multipart/form-data'},
+            }).then(res => {
+                this.todos = res.data.todos;
+
+                this.newTodo = '';
+            })
+
         }
-        // console.log(data);
+    },
 
-        axios.post('store.php',data, {
+    deleteTodo(index) {
+        const data = {
+            id: index
+        }
+
+        axios.post('delete.php', data, {
             headers: {'Content-Type': 'multipart/form-data'},
-        }). then(res => {
+        }).then(res => {
             this.todos = res.data.todos;
 
-            this.newTodo = '';
         })
-
-
     }
 },
 
