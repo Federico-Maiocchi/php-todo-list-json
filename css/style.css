@@ -9,7 +9,7 @@ ul,
 ol,
 menu {
     /* list-style: none; */
-    border: 1px solid black;
+    
 }
 
 /* general */
@@ -28,4 +28,6 @@ li {
     justify-content: space-between;
 }
 
-
+.done :first-child {
+    text-decoration: line-through;
+}

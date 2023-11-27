@@ -1,24 +1,23 @@
 <?php
 // recupero il parametro dal post in questo caso l'index
-$index = $_POST['id'] ?? '';
+$index_done = $_POST['id'] ?? '';
 
-// $index_int = intval($index);
-// var_dump($index_int);
+
+// var_dump($index_done);
 
 $response = [
     'success' => true,
 ];
 
-// controllo che selezionando il primo elemento della lista (indice 0) non ti cancella tutta la lista
-// siccome php vedo lo zero = false
-if ($index || $index === '0') {
+
+if ($index_done || $index_done === '0') {
     // leggiamo il file j son
     $todos_string = file_get_contents('./todos.json');
     // decodifico il file J Son per ottenere un array di todos
     $todos = json_decode($todos_string, true);
 
-    // togliere l'elemnto in base all' index selezionato
-    array_splice($todos, $index, 1);
+    // cambiare l'elemento della proprietà che avviene tramite click
+    $todos[$index_done]['done'] = !$todos[$index_done]['done'];
 
     $response ['todos'] = $todos;
 

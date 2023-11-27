@@ -29,8 +29,10 @@ $title = 'To do lists'
                 <div class="container">
                     <h3> {{ message }} </h3>
                     <ul>
-                        <li v-for="(todo, i) in todos " :key="i" >
-                            <span>{{ todo.text }}</span>
+                        <li :class="{ done: todo.done }"
+                            v-for="(todo, i) in todos " 
+                            :key="i" >
+                            <span @click="checkTodo(i)">{{ todo.text }}</span>
                             <span @click="deleteTodo(i)">Delete</span>
                         </li>   
                     </ul>

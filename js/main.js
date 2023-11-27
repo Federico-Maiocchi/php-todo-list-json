@@ -56,7 +56,22 @@ methods: {
             this.todos = res.data.todos;
 
         })
+    },
+
+    checkTodo(index) {
+        const data = {
+            id: index
+        }
+
+        axios.post('done.php', data, {
+            headers: {'Content-Type': 'multipart/form-data'},
+        }).then(res => {
+            this.todos = res.data.todos;
+
+        })
     }
+
+
 },
 
 created () {
